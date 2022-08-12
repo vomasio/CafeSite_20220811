@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <!--レスポンシブ用記述-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sky Coffee</title>
+    <!--リセットCSSのCDNから引っ張ってきたやつ-->
+    <link href="https://classic.yarnpkg.com/en/package/destyle.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">
+            <!--リンク先を#にしておけば押したときページ上部に飛ばす-->
+            <a href="#"><img src="img/logo.png" alt="SKY COFFEE"></a>
+        </h1>
+    </header>
+    <!--ヘッダとメインの間に挟まってる画像部分。-->
+    <div class="main-visual">
+        <!--pictureタブ内でアレコレするとブラウザサイズとかによって画像変えるとかができる。-->
+        <picture>
+            <!--アレコレ部分-->
+            <!--ブラウザ幅が768px以上の場合pc_main-visual.pngを表示する-->
+            <source media="(min-width: 768px)" srcset="img/pc_main-visual.png">
+            <!--上記条件以外の場合はsp_main-visual.pngを表示-->
+            <img src="img/sp_main-visual.png" alt="複数の青いカップのコーヒー">
+        </picture>
+    </div>
+    <!--メインの上にあるメニュー部分-->
+    <nav class="global-nav">
+        <ul>
+            <li><a href="#">menu</li>
+            <li><a href="#">blog</li>
+            <li><a href="#">access</li>
+        </ul>
+    </nav>
+    <main class="content">
+        <section class="concept">
+            <div class="container">
+                <div class="img">
+                    <!--画像の表示幅をあらかじめ指定することで画像表示領域を確保し、画像読み込み時にレイアウトシフトが起きるのを防ぐ
+                    レイアウトシフト：文章読んでる途中とかに画像が表示終わったりするせいで読んでる文章のスクロール位置が変わったりするやつ
+                    画像の正確なサイズとかはCSSであらためて決める。表示画像と比率があっていれば値は何でもよいらしい
+                    アートディレクション（サイズによって画像変えるやつ）する場合は、画像によって比率違うのでCSS使って領域確保するらしい？
+                    アートディレクションの問題についてはちょっとよくわからないので後回しにする-->
+                    <img src="img/concept.png" alt="青いカップのコーヒー" width="750" height="759" />
+                </div>
+                <div class="desc">
+                    <div class="subtitle">Concept</div>
+                    <h2 class="title">心静かにコーヒーを</h2>
+                    <div class="text">
+                        <p>
+                            立ち止まって、<br>
+                            空の青さを眺めて、<br>
+                            一息つきましょう。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blog">
+            <div class="container">
+                <h2 class="heading">blog<span class="subtitle">ブログ</span></h2>
+                <!--このブログ最新記事のパーツ分割できないのか？-->
+                <div class="list">
+                    <div class="item">
+                        <a href="#">
+                            <div class="img"><img src="img/thumbnail01.png" alt="青いトラック" width="700" height="357"></div>
+                            <div class="title">コーヒーカー始めました</div>
+                            <div class="date">2030.08.08</div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="img"><img src="img/thumbnail02.png" alt="牛乳" width="700" height="357"></div>
+                            <div class="title">牛乳</div>
+                            <div class="date">XXXX.XX.XX</div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="img"><img src="img/thumbnail03.png" alt="音楽アプリ" width="700" height="357"></div>
+                            <div class="title">音楽</div>
+                            <div class="date">ry</div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="btn">
+                    ブログ一覧
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="logo"><a href="#"><img src="img/logo-white.png" alt="SKY COFFEE" width="200" height="40"></a></div>
+        <div class="copyright">&copy;Sky Coffee</div><!--&copy;は特殊文字の©を出すやつ-->
+    </footer>
+</body>
+
+</html>
